@@ -23,6 +23,14 @@ public class Enterprise {
     private String contactEmail;
 
     /**
+     * @return the id
+     */
+    public Long getId() {
+        return this.id;
+    }
+
+    /**
+     * add a name
      * @param name
      */
     public void setName(String name) {
@@ -30,13 +38,14 @@ public class Enterprise {
     }
 
     /**
-     * @return
+     * @return the name
      */
     public String getName() {
         return this.name;
     }
 
     /**
+     * add a description
      * @param description
      */
     public void setDescription(String description) {
@@ -44,13 +53,14 @@ public class Enterprise {
     }
 
     /**
-     * @return
+     * @return the description
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
+     * add a contactName
      * @param contactName
      */
     public void setContactName(String contactName) {
@@ -58,13 +68,14 @@ public class Enterprise {
     }
 
     /**
-     * @return
+     * @return the contactName
      */
     public String getContactName() {
         return this.contactName;
     }
 
     /**
+     * add a contactEmail
      * @param contactEmail
      */
     public void setContactEmail(String contactEmail) {
@@ -72,7 +83,7 @@ public class Enterprise {
     }
 
     /**
-     * @return
+     * @return the contactEmail
      */
     public String getContactEmail() {
         return this.contactEmail;

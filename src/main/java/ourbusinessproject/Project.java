@@ -15,6 +15,14 @@ public class Project {
     private String description;
 
     /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * add a title
      * @param title
      */
     public void setTitle(String title) {
@@ -22,13 +30,14 @@ public class Project {
     }
 
     /**
-     * @return
+     * @return the title
      */
     public  String getTitle() {
         return this.title;
     }
 
     /**
+     * add the description
      * @param description
      */
     public void setDescription(String description) {
@@ -36,7 +45,7 @@ public class Project {
     }
 
     /**
-     * @return
+     * @return the description
      */
     public String getDescription() {
         return this.description;
