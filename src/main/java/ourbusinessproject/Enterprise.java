@@ -1,22 +1,17 @@
 package ourbusinessproject;
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public class Enterprise {
-    @NotNull
-    @NotEmpty
+    @NotBlank
     private String name;
     @Size(min=10)
     private String description;
-    @NotNull
-    @NotEmpty
+    @NotBlank
     private String contactName;
-    @NotNull
-    @NotEmpty
-    @Email
+    @NotBlank @Email
     private String contactEmail;
 
     public Enterprise(){}
@@ -25,15 +20,31 @@ public class Enterprise {
         this.name = name;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     public void setContactName(String contactName) {
         this.contactName = contactName;
     }
 
+    public String getContactName() {
+        return this.contactName;
+    }
+
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
+    }
+
+    public String getContactEmail() {
+        return this.contactEmail;
     }
 }

@@ -1,11 +1,9 @@
 package ourbusinessproject;
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 
 public class Project {
-    @NotNull
-    @NotEmpty
+    @NotBlank
     private String title;
     private String description;
 
@@ -15,9 +13,15 @@ public class Project {
         this.title = title;
     }
 
+    public  String getTitle() {
+        return this.title;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
 
-
+    public String getDescription() {
+        return this.description;
+    }
 }
