@@ -1,10 +1,8 @@
 package ourbusinessproject;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Project {
@@ -13,6 +11,8 @@ public class Project {
     @NotBlank
     private String title;
     private String description;
+    @ManyToOne @NotNull
+    private Enterprise enterprise;
 
     /**
      * @return the id
@@ -49,5 +49,19 @@ public class Project {
      */
     public String getDescription() {
         return this.description;
+    }
+
+
+    /**
+     * link the project to an enterprise
+     * @param enterprise
+     */
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
+    }
+
+
+    public Enterprise getEnterprise() {
+        return this.enterprise;
     }
 }
