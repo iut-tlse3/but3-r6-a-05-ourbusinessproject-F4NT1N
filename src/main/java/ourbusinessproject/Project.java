@@ -11,7 +11,8 @@ public class Project {
     @NotBlank
     private String title;
     private String description;
-    @ManyToOne @NotNull
+    @NotNull
+    @ManyToOne
     private Enterprise enterprise;
 
     /**
@@ -58,6 +59,9 @@ public class Project {
      */
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
+        if(this.enterprise!=null) {
+            this.enterprise.addProject(this);
+        }
     }
 
 
