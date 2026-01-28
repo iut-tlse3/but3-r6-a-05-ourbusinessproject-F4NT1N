@@ -1,7 +1,11 @@
 package ourbusinessproject;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Service;
+
+import java.util.Collection;
+import java.util.List;
 
 @Service
 public class EnterpriseProjectService {
@@ -76,4 +80,13 @@ public class EnterpriseProjectService {
     }
 
 
+    /**
+     * find all projects ordered by title
+     * @return The list of all project sorted by title
+     */
+    public List<Project> findAllProjects() {
+        String query = "SELECT p FROM Project p ORDER BY p.title";
+        TypedQuery<Project> queryObj = entityManager.createQuery(query, Project.class);
+        return queryObj.getResultList();
+    }
 }
