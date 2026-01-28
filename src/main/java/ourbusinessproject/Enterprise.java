@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -21,8 +22,8 @@ public class Enterprise {
     private String contactName;
     @NotBlank @Email
     private String contactEmail;
-    @OneToMany
-    private List<Project> projects;
+    @OneToMany(mappedBy = "enterprise")
+    private Collection<Project> projects;
 
     /**
      * @return the id
@@ -107,7 +108,7 @@ public class Enterprise {
     /**
      * @return the list of projects linked to the enterprise
      */
-    public List<Project> getProjects() {
+    public Collection<Project> getProjects() {
         return this.projects;
     }
 }
