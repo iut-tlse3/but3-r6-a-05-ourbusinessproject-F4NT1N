@@ -21,7 +21,6 @@ class ProjectControllerIntegrationTest {
 
         // when requesting all projects
         String body = this.restTemplate.getForObject("/api/projects", String.class);
-        System.out.println(body);
 
         // then the results provide three projects with their enterprise
         assertTrue(body.contains(initializationService.getProject1E1().getTitle()));

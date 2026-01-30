@@ -17,6 +17,11 @@ public class InitializationService {
     @Autowired
     private EnterpriseProjectService enterpriseProjectService;
 
+
+    /**
+     * this method initialize the projects and enterprises
+     * with the @Transactional if one project or enterprise fail the whole method fail.
+     */
     @Transactional
     public void initProjects() {
         this.enterprise1 = enterpriseProjectService.newEnterprise("entreprise1", "enterprise 1", "fantin", "fantin@email.com");
